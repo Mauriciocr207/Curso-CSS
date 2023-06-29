@@ -1,0 +1,14 @@
+.about__title {
+    text-align: center;
+}
+.about__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+.about__content--text {
+    padding-right: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}

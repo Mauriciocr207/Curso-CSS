@@ -1,0 +1,10 @@
+.header {
+    margin: 5rem 0;
+    text-align: center;
+}
+.header .header__title {
+    
+}
+.header .header__title span {
+    color: #037bc0;
+}

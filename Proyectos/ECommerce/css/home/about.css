@@ -1,0 +1,24 @@
+.about {
+    background-image: 
+        linear-gradient(
+            to right, 
+            transparent 50%, 
+            #037bc0 50%, 
+            #037bc0 100%),
+            url(../../img/nosotros.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+    background-position: left center;
+    padding: 10rem 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 8rem;
+}
+.about__content {
+    grid-column: 2 / 3;
+    
+}
+.about__content--title,
+.about__content--text {
+    color: white;
+}
