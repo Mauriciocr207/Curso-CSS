@@ -1,0 +1,93 @@
+.contacto__content {
+    display: flex;
+    justify-content: center;
+}
+.form {
+    width: 70%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form legend {
+    padding: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+    width: 100%;
+    line-height: 1;
+    margin-bottom: .9rem;
+}
+.form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 1rem;
+}
+.form__campo {
+    position: relative;
+}
+.form__campo input:not([type="radio"]),
+.form__campo textarea,
+.form__campo select {
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    padding-left: 1rem;
+    background-color: #e1e1e1;
+    border-radius: .5rem;
+}
+.form__campo textarea {
+    resize: none;
+}
+.form__campo.radios {
+    display: flex;
+}
+.form__campo .radio {
+    display: flex;
+    width: max-content;
+    position: relative;
+    overflow: hidden;
+}
+.form__campo .radio input {
+    display: inline;
+    height: unset;
+    width: fit-content;
+    order: 2;
+}
+.form__campo .radio input:checked + label::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #e1e1e1;
+    animation: animateBorder .3s ease;
+    cursor: default;
+}
+.form__campo .radio label {
+    display: inline;
+    width: fit-content;
+    order: -1;
+    padding: 0 1rem;
+    cursor: default;
+}
+.form__campo label {
+    padding-left: 1rem;
+    cursor:text;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    transform-origin: left center;
+    transition: all .3s ease;
+}
+.form .button {
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    margin-right: 7rem;
+    margin-left: auto;
+}
