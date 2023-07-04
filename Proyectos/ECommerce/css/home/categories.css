@@ -9,8 +9,13 @@
     display: grid;
     list-style: none;
     text-decoration: none;
-    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
     gap: 2rem;
+}
+@media (min-width: 768px) {
+    .categories .categories__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 .categories .categories__list .categories__list--categorie {
     overflow: hidden;

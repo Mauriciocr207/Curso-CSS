@@ -92,3 +92,42 @@
 .grid-9 .box:nth-child(5) {
     grid-area: footer;
 }
+/* 10 */
+.grid-10 {
+    display: grid;
+    height: 120rem;
+    grid-template:  "header header header" 2.5fr
+                    "nav nav nav" 1fr
+                    "contenido contenido aside" 6fr
+                    "footer footer footer" 2.5fr / 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.grid-10 .box:nth-child(1) {
+    grid-area: header;
+}
+.grid-10 .box:nth-child(2) {
+    grid-area: nav;
+}
+.grid-10 .box:nth-child(3) {
+    grid-area: contenido;
+}
+.grid-10 .box:nth-child(4) {
+    grid-area: aside;
+}
+.grid-10 .box:nth-child(5) {
+    grid-area: footer;
+}
+/* 11 */
+.grid-11 {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(6, 1fr);
+    height: 30rem;
+    align-items: flex-end;
+}
+/* 12 */
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat( auto-fill, 20rem );
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+}

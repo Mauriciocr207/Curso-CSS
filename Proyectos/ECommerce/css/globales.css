@@ -14,7 +14,12 @@ body {
     box-sizing: inherit;
 }
 h1 {
-    font-size: 5rem;
+    font-size: 4rem;
+}
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
 }
 h2 {
     font-size: 3rem;

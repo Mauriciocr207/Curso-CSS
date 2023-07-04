@@ -3,11 +3,17 @@
 }
 .about__content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
+    padding: 2rem;
     gap: 4rem;
 }
+@media (min-width: 1200px) {
+    .about__content {
+        padding-right: 10rem;
+        grid-template-columns: 1fr 2fr;
+    }
+}
 .about__content--text {
-    padding-right: 10rem;
     display: flex;
     flex-direction: column;
     justify-items: center;
