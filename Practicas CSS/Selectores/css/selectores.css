@@ -1,0 +1,117 @@
+/* 
+    Para anular los estilos en cascada,
+    colocaremos la clase .anular antes
+    de cada selector, para quitar los estilos
+    y mantener toda la práctica de selectores
+    en un mismo archivo.
+    Al quitar el .anulador, podremos ver los
+    estilos aplicados a cada selector
+*/
+/*** PRÁCTICA DE SELECTORES ***/
+/* por elemento */
+.anular p {
+    font-size: 2rem;
+    color: red;
+}
+/* clase */
+.anulador .primer-parrafo {
+    font-size: 4rem;
+    color: red;
+}
+/* Dos clases */
+.anulador .texto {
+    background-color: red;
+}
+.anulador .azul {
+    color: blue;
+}
+.anulador .mayusculas {
+    text-transform: uppercase;
+}
+.anulador .texto.mayusculas {
+    font-size: 5rem;
+}
+/* selector de clases anidadas */
+.anulador .header .descripcion {
+    color: red;
+}
+.anulador .descripcion {
+    color: blue;
+}
+/* selector de id */
+.anulador .texto {
+    color: blue;
+}
+.anulador #encabezado {   
+    text-transform: uppercase;
+    color: red;
+}
+.anulador #encabezado.texto {
+    color: tomato;
+}
+/* selector de etiqueta y clase */
+.anulador div.texto {
+    background-color: yellow;
+
+}
+/* seleccionar dos elementos */
+.anulador .texto,
+.anulador .oferta {
+    border: 3px solid yellow;
+    padding: 2rem;
+}
+/* primer nivel de hijos */
+.anulador .admin > div {
+    border: 2px solid red;
+}
+/* primer elemento siguiente */
+.anulador .admin div + p {
+    background-color: red;
+}
+/* por atributo */
+/* inicien con */
+.anulador a[href ^= "http"] {
+    color: red;
+}
+/* finalicen con */
+.anulador a[href $= ".com"] {
+    color: blue;
+}
+.anulador input[type="tel"] {
+    border: 5px solid red;
+}
+/* primer hijo de una lista */
+.anulador ul li:first-child {
+    border: 2px solid red;
+}
+/* ultimo hijo de una lista */
+.anulador ul li:last-child {
+    border: 2px solid rebeccapurple;
+}
+/* seleccionar un elemento en específíco */
+.anulador ul li:nth-child(2) {
+    border: 2px solid blue;
+}
+/* impares */
+.anulador ul li:nth-child(odd) {
+    border: 2px solid yellow;
+}
+/* pares */
+.anulador ul li:nth-child(even) {
+    border: 2px solid red;
+}
+/* cualquier otra regla */
+.anulador ul li:nth-child(2n + 3) {
+    border: 2px solid purple;
+}
+/* todos los elementos excepto uno o unos */
+.anulador p:not(.texto):not(.oferta) {
+    color: red;
+}
+/* primera linea o primer párrafo */
+.anulador .primer-letra::first-letter {
+    background-color: red;
+}
+.anulador .primer-linea::first-line {
+    background-color: blue;
+}

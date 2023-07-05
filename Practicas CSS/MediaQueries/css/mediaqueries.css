@@ -1,0 +1,157 @@
+.anulador .oferta {
+    background-color: #00446e;
+    padding: 2rem;
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.anulador .precio {
+    font-size: 6rem;
+    margin: 0;
+}
+/* @media ( max-width: 600px ) {
+    .oferta {
+        max-width: 90%;
+        background-color: red;
+    }
+    .precio {
+        font-size: 2rem;
+    }
+} */
+
+/* Mobile First */
+.anulador .oferta {
+    background-color: #00446e;
+    padding: 2rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+}
+.anulador .precio {
+    font-size: 4rem;
+    margin: 0;
+}
+/* @media (min-width: 600px) {
+    .oferta {
+        max-width: 40rem;
+    }
+} */
+/* @media (min-width: 800px) {
+    .oferta {
+        max-width: 60rem;
+    }
+} */
+/* 
+    Cuando se trabaja con mobile first
+    Se colocan los media queries del más
+    pequeño al más grande 
+*/
+
+/* Desktop First */
+.anulador .oferta {
+    background-color: #00446e;
+    padding: 2rem;
+    text-align: center;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+.anulador .precio {
+    font-size: 4rem;
+    margin: 0;
+}
+/* @media ( max-width: 800px ) {
+    .oferta {
+        background-color: blue;
+    }
+}
+@media ( max-width: 600px ) {
+    .oferta {
+        max-width: 90%;
+        background-color: red;
+    }
+    .precio {
+        font-size: 2rem;
+    }
+} */
+/* 
+    Cuando se trabaja con desktop first
+    Se colocan los media queries del más
+    grande al más pequeño 
+*/
+/* Media querie entre dos tamaños */
+.anulador .oferta {
+    background-color: #00446e;
+    padding: 2rem;
+    text-align: center;
+}
+.anulador .precio {
+    font-size: 6rem;
+    margin: 0;
+}
+/* @media (min-width: 768px) and (max-width: 1000px), (min-width: 1500px) {
+    .oferta {
+        background-color: yellow;
+    }
+} */
+/* media Queries Estándar */
+/* Telefono horizontal */
+@media (min-width: 550px) {
+    
+}
+/* Tablet */
+@media (min-width: 768px) {
+    
+}
+/* Laptops */
+@media (min-width: 1024px) {
+    
+}
+/* Large Desktop */
+@media (min-width: 1200px) {
+    
+}
+/* Televisiones */
+@media (min-width: 1600px) {
+    
+}
+/* Crear Contenedores Responsive */
+.anulador .contenedor-responsive {
+    background-color: white;
+    width: 90%;
+    max-width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+}
+/* @media (min-width: 768px) {
+    .contenedor-responsive {
+        background-color: red;
+    }
+} */
+/* Colunas responsive con flexbox */
+/* @media (min-width: 768px) {
+    .tres-columnas-flex {
+        display: flex;
+        gap: 2rem;
+    }
+    .columna {
+        flex-grow: 1;
+    }
+} */
+/* Columas responsive con grid */
+/* @media (min-width: 768px) {
+    .tres-columnas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+} */
+/* Imagenes responsive */
+picture {
+    display: block;
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}

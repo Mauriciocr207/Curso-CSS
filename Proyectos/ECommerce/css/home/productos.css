@@ -1,0 +1,106 @@
+.productos {
+    margin-top: 5rem;
+    width: 100%;
+}
+.productos__title {
+    text-align: center;
+}
+.productos__content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;   
+    padding: 2rem;
+}
+
+.producto {
+    background-color: #037bc0;
+}
+
+.producto__img {
+    width: 100%;
+    position: relative;
+}
+.producto__text {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+.producto__text--title,
+.producto__text--text,
+.producto__text--price {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.producto__text--price {
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+    .productos__content {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+    }
+    .producto:nth-child(1) {
+        grid-column: span 6;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    .producto:nth-child(1) .producto__img,
+    .producto:nth-child(6) .producto__img {
+        height: 100%;
+        max-height: 45rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    .producto:nth-child(2) .producto__img,
+    .producto:nth-child(3) .producto__img {
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    .producto:nth-child(2),
+    .producto:nth-child(3),
+    .producto:nth-child(4),
+    .producto:nth-child(5) {
+        grid-column: span 3;
+    }
+    .producto:nth-child(6) {
+        grid-column: span 6;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .productos__content {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .producto:nth-child(1) {
+        grid-column: span 6;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    .producto:nth-child(1) .producto__img {
+        height: 45rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    .producto:nth-child(2) .producto__img,
+    .producto:nth-child(3) .producto__img {
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    .producto:nth-child(2),
+    .producto:nth-child(3) {
+        grid-column: span 3;
+    }
+    .producto:nth-child(4),
+    .producto:nth-child(5),
+    .producto:nth-child(6) {
+        grid-column: span 2;
+        display: unset;
+    }
+    .producto:nth-child(6) .producto__img {
+        height: auto;
+    }
+}

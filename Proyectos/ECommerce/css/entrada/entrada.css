@@ -1,0 +1,12 @@
+@import url(../blog/blog.css);
+.entrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.entrada__content {
+    max-width: 80rem;
+}
+.entrada__content h2 {
+    margin-bottom: 2rem;
+}
