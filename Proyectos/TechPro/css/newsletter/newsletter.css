@@ -1,0 +1,84 @@
+.newsletter {
+    margin-top: 4rem;
+}
+.contenido-newsletter {
+    background-color: var(--primario);
+    color: var(--blanco);
+    
+}
+.contenido-newsletter h2,
+.contenido-newsletter p {
+    margin: 1rem 0;
+}
+.contenido-newsletter p {
+    max-width: 90rem;
+}
+@media (min-width: 768px) {
+   .contenido-newsletter {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 60rem;
+   }
+}
+@media (min-width: 1200px) {
+   .contenido-newsletter {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50rem;
+   }
+}
+.imagen-newsletter {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.imagen-newsletter img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.texto-newsletter {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+}
+.form {
+    max-width: 90rem;
+    width: 100%;
+}
+.form .campo {
+    display: flex;
+    flex-direction: column;
+}
+.form .campo input[type="text"] {
+    width: 100%;
+    border: none;
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primario);
+    outline: none;
+}
+.form .campo label {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+    outline: none;
+}
+.form input[type="submit"] {
+    margin-top: 2rem;
+    width: 100%;
+    border: none;
+    background-color: var(--secundario);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--blanco);
+    cursor: pointer;
+}

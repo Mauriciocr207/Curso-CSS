@@ -63,21 +63,21 @@
     <main class="box modelos">
         <h2 class="text-center degradado-verde">Elige tus TechPRO</h2>
         <div class="listado-modelos">
-            <div class="modelo modelo-x">
+            <div id="modelo" class="modelo modelo-x">
                 <div class="modelo__texto">
                     <h3>TechPro X</h3>
                     <p class="precio">$299</p>
                 </div>
                 <img class="modelo__img" src="./img/modelo-x.svg" alt="">
             </div> 
-            <div class="modelo modelo-y">
+            <div id="modelo" class="modelo modelo-y">
                 <div class="modelo__texto">
                     <h3>TechPro Y</h3>
                     <p class="precio">$399</p>
                 </div>
                 <img class="modelo__img" src="./img/modelo-y.svg" alt="">
             </div> 
-            <div class="modelo modelo-z">
+            <div id="modelo" class="modelo modelo-z">
                 <div class="modelo__texto">
                     <h3>TechPro Z</h3>
                     <p class="precio">$499</p>
@@ -87,6 +87,35 @@
         </div>
 
     </main>
+
+    <section class="newsletter">
+        <div class="contenido-newsletter">
+            <div class="imagen-newsletter">
+                <picture>
+                    <source srcset="./img/newsletter.avif" type="image/avif">
+                    <source srcset="./img/newsletter.webp" type="image/webp">
+                    <img loading="lazy" src="./img/newsletter.jpg" alt="">
+                </picture>
+            </div>
+            <div class="texto-newsletter">
+                <h2>Recibe Actualizaciones</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus id reiciendis blanditiis alias repellat, dignissimos ipsum, praesentium provident cumque non saepe eum accusamus ipsam aut ullam consequuntur! Fugiat, ratione animi?</p>
+
+                <form class="form">
+                    <div class="campo">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" placeholder="Tu Email">
+                    </div>
+                    <input type="submit" value="Inscribirme">
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <p>Todos los derechos Reservados</p>
+    </footer>
 
 
 

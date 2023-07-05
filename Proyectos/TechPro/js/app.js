@@ -112,13 +112,28 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
         musicBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
     }
     musicBtn.addEventListener('click', e => {
+        const modelos = document.querySelectorAll('#modelo');
         clicked = true;
         // Crear ícono inicial
         if(audio.paused) {
+            modelos.forEach( modelo => {
+                const imgAudifono = modelo.querySelector('.modelo__img');
+                imgAudifono.style.animation = "gyroImg 4s linear infinite";
+            }); 
             playMusic();
             gyro();
             musicBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
         } else {
+            modelos.forEach( modelo => {
+                const imgAudifono = modelo.querySelector('.modelo__img');
+                imgAudifono.style.animation = "none";
+                modelo.addEventListener('mouseover', () => {
+                    if(audio.paused) imgAudifono.style.animation = "gyroImg 4s linear infinite";
+                });
+                modelo.addEventListener('mouseout', () => {
+                    if(audio.paused) imgAudifono.style.animation = "none";
+                });
+            });
             stopMusic();
             stop();
             musicBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
