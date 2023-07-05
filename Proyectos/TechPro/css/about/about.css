@@ -1,0 +1,62 @@
+.sobre-tech {
+    background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        var(--primario) 0%
+    ),
+    url(../../img/imagen-mujer.jpg);
+    background-position: right;
+    background-repeat: repeat, no-repeat;
+    background-size: 100% cover;
+}
+@media (min-width: 768px) {
+    .sobre-tech {
+        background-image: linear-gradient(
+            to left,
+            transparent 50%,
+            var(--primario) 0%
+        ),
+        url(../../img/imagen-mujer.jpg);
+        background-position: center right;
+        background-size: contain cover;
+        background-repeat: repeat, no-repeat;
+    }
+}
+
+.sobre-tech-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 40rem);
+    gap: var(--gap);
+}
+@media (min-width: 768px) {
+    .sobre-tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 40rem;
+    }
+}
+
+.texto-sobre-tech {
+    grid-row:  2 / 3;
+    color: var(--blanco);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+@media (min-width: 768px) {
+    .texto-sobre-tech {
+        text-align: left;
+        grid-row: 1 / 2;
+        grid-column: 1/2;
+    }
+}
+
+.texto-sobre-tech p {
+    font-size: 2rem;
+    line-height: 2;
+}
+
+.texto-sobre-tech h2 {
+    font-size: 4rem;
+}

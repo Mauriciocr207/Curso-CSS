@@ -1,0 +1,66 @@
+@import url(./normalize.css);
+:root {
+    /* FONTS */
+    --fuentePrincipal: 'Roboto', sans-serif;
+    --fuenteSecundaria: 'Lato', sans-serif;
+    /* COLORS */
+    --primario: #1073BA;
+    --secundario: #00DA55;
+    --gris: #3B3B3B;
+    --grisClaro: #E1E1E1;
+    --blanco: #fff;
+    --negro: #1F1E1E;
+
+    --gap: 5rem;
+    
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+/* GLOBALES */
+.box {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    font-weight: 900;
+    font-family: var(--fuenteSecundaria);
+    margin: calc( var(--gap) / 2 ) 0;
+}
+h1 {
+    font-size: 4.4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 2.8rem;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+/* UTILITIES */
+.text-center {
+    text-align: center;
+}
+.degradado-verde {
+    color: transparent;
+    background: linear-gradient(
+        to right,
+        var(--primario) 0%,
+        var(--secundario) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+}
