@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 (() => {
@@ -54,10 +55,14 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
         scene.environment = pmremGenerator.fromScene( new RoomEnvironment( renderer ), 0.01 ).texture;
         //== IMPORT MODEL ==//
         const loader = new GLTFLoader();
-        loader.load( './assets/scene.build.gltf', function ( gltf ) {
+        // Optional: Provide a DRACOLoader instance to decode compressed mesh data
+        // const dracoLoader = new DRACOLoader();
+        // dracoLoader.setDecoderPath( 'https://unpkg.com/three@v0.154.0/examples/jsm/libs/draco/' );
+        // loader.setDRACOLoader( dracoLoader );
+        loader.load( './assets/scene.gltf', function ( gltf ) {
             model = gltf.scene;
             model.position.set( 0, -3.8, 0 );
-            model.scale.set( 1, 1, 1 );
+            model.scale.set( 50, 50, 50 );
             scene.add( model );
             // scene.add( new THREE.AxesHelper(5) );
             render();
