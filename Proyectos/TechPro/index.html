@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPRO Audifonos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="https://kit.fontawesome.com/d10d1e89d5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <!-- MUSIC BUTTON -->
+    <div id="musicbutton" class="musicbutton"></div>
+    
+    
+    <header id="techproBox" class="header">
+
+        <div class="box header__content">
+            <div id="audifonos3D" class="header__imagen3D">
+                
+            </div>
+            <div class="header__texto">
+                <p class="tagline-producto">Sonido Profesional</p>
+                <h1 class="nombre-producto degradado-verde">TechPro</h1>
+                <p class="descripcion-producto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque magnam labore voluptatum animi sapiente quas id fugit dignissimos maxime, veritatis libero rem, tempora optio porro corrupti ullam? Doloremque, ab sed?</p>
+                <p class="precio-producto">Desde <span>$299</span></p>
+            </div>
+        </div>
+    </header>
+
+    <section class="box">
+        <div class="iconos">
+            <div class="icono">
+                <img src="./img/icono-sonido.svg" alt="Icono Sonido">
+                <h3>Gran Sonido</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus porro consequuntur nemo, mollitia suscipit non dolorum reiciendis cupidit</p>
+            </div>
+            <div class="icono">
+                <img src="./img/icono-garantia.svg" alt="Icono Sonido">
+                <h3>Garantía de por vida</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus porro consequuntur nemo, mollitia suscipit non dolorum reiciendis cupidit</p>
+            </div>
+            <div class="icono">
+                <img src="./img/icono-bateria.svg" alt="Icono Sonido">
+                <h3>+20 horas de batería</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus porro consequuntur nemo, mollitia suscipit non dolorum reiciendis cupidit</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-tech">
+        <div class="box sobre-tech-grid">
+            <div class="texto-sobre-tech">
+                <h2>Sobre los <span>TechPRO</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam magnam, debitis temporibus, magni ab velit rerum fugit, nihil ipsum culpa ipsa. Iure cum quae exercitationem ad</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="box modelos">
+        <h2 class="text-center degradado-verde">Elige tus TechPRO</h2>
+        <div class="listado-modelos">
+            <div id="modelo" class="modelo modelo-x">
+                <div class="modelo__texto">
+                    <h3>TechPro X</h3>
+                    <p class="precio">$299</p>
+                </div>
+                <img class="modelo__img" src="./img/modelo-x.svg" alt="">
+            </div> 
+            <div id="modelo" class="modelo modelo-y">
+                <div class="modelo__texto">
+                    <h3>TechPro Y</h3>
+                    <p class="precio">$399</p>
+                </div>
+                <img class="modelo__img" src="./img/modelo-y.svg" alt="">
+            </div> 
+            <div id="modelo" class="modelo modelo-z">
+                <div class="modelo__texto">
+                    <h3>TechPro Z</h3>
+                    <p class="precio">$499</p>
+                </div>
+                <img class="modelo__img" src="./img/modelo-z.svg" alt="">
+            </div> 
+        </div>
+
+    </main>
+
+    <section class="newsletter">
+        <div class="contenido-newsletter">
+            <div class="imagen-newsletter">
+                <picture>
+                    <source srcset="./img/newsletter.avif" type="image/avif">
+                    <source srcset="./img/newsletter.webp" type="image/webp">
+                    <img loading="lazy" src="./img/newsletter.jpg" alt="">
+                </picture>
+            </div>
+            <div class="texto-newsletter">
+                <h2>Recibe Actualizaciones</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus id reiciendis blanditiis alias repellat, dignissimos ipsum, praesentium provident cumque non saepe eum accusamus ipsam aut ullam consequuntur! Fugiat, ratione animi?</p>
+
+                <form class="form">
+                    <div class="campo">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" placeholder="Tu Email">
+                    </div>
+                    <input type="submit" value="Inscribirme">
+                </form>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <p>Todos los derechos Reservados</p>
+    </footer>
+
+
+
+
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+            "three": "https://unpkg.com/three@v0.154.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@v0.154.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>

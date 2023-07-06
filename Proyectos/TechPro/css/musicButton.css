@@ -1,0 +1,26 @@
+.musicbutton {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 7rem;
+    height: 5rem;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    background: linear-gradient(
+        to right,
+        var(--primario) 0%,
+        var(--secundario) 100%
+    );
+    cursor: pointer;
+    transition: transform .3s ease;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+}
