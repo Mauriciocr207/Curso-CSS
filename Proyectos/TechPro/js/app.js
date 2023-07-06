@@ -56,10 +56,10 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
         //== IMPORT MODEL ==//
         const loader = new GLTFLoader();
         // Optional: Provide a DRACOLoader instance to decode compressed mesh data
-        // const dracoLoader = new DRACOLoader();
-        // dracoLoader.setDecoderPath( 'https://unpkg.com/three@v0.154.0/examples/jsm/libs/draco/' );
-        // loader.setDRACOLoader( dracoLoader );
-        loader.load( './assets/scene.gltf', function ( gltf ) {
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath( 'https://unpkg.com/three@v0.154.0/examples/jsm/libs/draco/' );
+        loader.setDRACOLoader( dracoLoader );
+        loader.load( './assets/scene.min.gltf', function ( gltf ) {
             model = gltf.scene;
             model.position.set( 0, -3.8, 0 );
             model.scale.set( 50, 50, 50 );
