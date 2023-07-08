@@ -1,3 +1,4 @@
+// MINIFICACION DE IMAGENES
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const ImageminAvifWebpackPlugin = require('imagemin-avif-webpack-plugin');
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
@@ -12,11 +13,6 @@ module.exports = {
       filename: 'app.bundle.js',
   },
   mode: "production",
-  module: {
-    rules: [
-
-    ]
-  },
   plugins: [
       new CopyWebpackPlugin({
           patterns: [  
@@ -60,7 +56,7 @@ module.exports = {
             {
               test: /\.(jpe?g|png)/,
               options: {
-                quality: 75 // Configura la calidad de compresión de WebP (valor entre 0 y 100)
+                quality: 50 // Configura la calidad de compresión de WebP (valor entre 0 y 100)
               },
               overrideExtension: true,
               detailedLogs: false,
@@ -73,12 +69,4 @@ module.exports = {
         resourceRegExp: /\.s[ac]ss$/i,
       }),
   ],
-  devServer: {
-      static: {
-          directory: path.join(__dirname, 'dist'),
-      },
-      compress: true,
-      port: 3000,
-      open: true,
-  }
 }

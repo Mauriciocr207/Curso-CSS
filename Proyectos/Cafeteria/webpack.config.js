@@ -1,43 +1,52 @@
+// MINIFICACION DE CSS
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // HTML
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+// Para búsqueda de archivos html
+const glob = require('glob');
+// CREACION DE INSTANCIAS HTML-WEBPACK-PLUGIN
+const rootDir = './src';
+const htmlPlugins = glob.sync('**/*.html', {
+    cwd: path.resolve(__dirname, rootDir),
+}).map( file => {
+    return new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, rootDir, file),
+        scriptLoading: "blocking",
+        filename: file,
+    })
+});
+
 module.exports = {
+    mode: "production",
+    devtool: "source-map",
     entry: './src/app.js',
+    watch: true,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js',
     },
-    mode: "production",
-    devtool: "source-map",
     module: {
         rules: [
             {
                 test: /\.s[ac]ss$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    // Creates `style` nodes from JS strings
-                    //"style-loader",
-                    // Translates CSS into CommonJS
                     {
                         loader: "css-loader",
                         options: {
                             sourceMap: true,
                         }
                     },
-                    // postcss
                     {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: [
-                                    require('autoprefixer'),
-                                ],
+                                plugins: [require('autoprefixer')],
                             },
                         }
                     },
-                    // Compiles Sass to CSS
                     {
                         loader: "sass-loader",
                         options: {
@@ -49,21 +58,21 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            minify: false,
-            scriptLoading: "blocking",
-            template: './src/index.html',
-        }),
+        ...htmlPlugins,
         new MiniCssExtractPlugin({
-            filename: 'app.min.css'
+            filename: './css/app.min.css',
         }),
     ],
-    devServer: {
-        static: {
-            directory: path.join(__dirname, 'dist'),
-        },
-        compress: true,
-        port: 3000,
-        open: true,
-    }
+    // Dado que estamos utilizando un watch para mirar cambios en los archivos,
+    // no es necesario utilizar un server, sin embargo, se puede ejecutar un server
+    // de la siguiente forma:
+    // devServer: {
+    //     static: {
+    //         directory: path.join(__dirname, 'dist'),
+    //     },
+    //     compress: true,
+    //     port: 3000,
+    //     open: true,
+    // }
+    // Y ejecutando en la terminal -> npm run start
 }
