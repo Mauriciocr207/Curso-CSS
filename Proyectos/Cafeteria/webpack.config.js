@@ -32,11 +32,17 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: path.resolve(__dirname, 'dist/'),
+                        }
+                    },
                     {
                         loader: "css-loader",
                         options: {
                             sourceMap: true,
+                            url: false,
                         }
                     },
                     {

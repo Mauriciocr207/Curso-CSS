@@ -1,0 +1,46 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.nuestros-testimoniales {
+    padding: 10rem 2rem;
+    margin-top: -16rem;
+    background-color: v.$blanco;
+    @include m.tablet {
+        padding: 10rem;
+    }
+
+    .testimonial {
+        background-color: v.$cafeClaro;
+        padding: 5rem;
+        max-width: 50rem;
+        margin: 0 auto;
+        border-radius: 3rem;
+        font-family: v.$fuente_cursiva;
+        font-weight: 400;
+        .text {
+            font-size: 1.7rem;
+        }
+        .text::before {
+            content: '';
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            background-image: 
+                image-set(
+                    url(../img/comilla.avif) 1x,
+                    url(../img/comilla.webp) 1x,
+                    url(../img/comilla.png) 1x,
+
+                );
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 1rem;
+        }   
+        .autor {
+            text-align: right;
+            font-size: 2.4rem;
+            color: v.$primario;
+            font-weight: 700;
+        }
+    }
+}
