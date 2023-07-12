@@ -1,0 +1,45 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.descargar {
+    background-color: v.$grisClaro;
+    padding: v.$separacion 0;
+    &__grid {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: v.$separacion;
+        @include m.tablet {
+            @include m.grid(2, v.$separacion);
+        }
+    }
+
+    &__imagen {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.tiendas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__heading,
+    &__texto {
+        text-align: center;
+    }
+    &__heading {
+        color: v.$secundario;
+        margin: 2rem 0 0 0;
+    }
+    &__texto {
+        margin-bottom: 3rem;
+    }
+
+    &__grid {
+        @include m.grid(2, 2rem);
+    }
+    &__enlace {
+        cursor: pointer;
+    }
+    
+}

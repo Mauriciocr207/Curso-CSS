@@ -1,6 +1,5 @@
-@use '../base/mixins' as m;
 @use '../base/variables' as v;
-
+@use '../base/mixins' as m;
 .header {
     display: flex;
     flex-direction: column;
