@@ -1,0 +1,24 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.contenido-menu {
+    background-image: 
+        image-set(
+            url(../img/cafe.avif) 1x,
+            url(../img/cafe.webp) 1x,
+            url(../img/cafe.jpg) 1x,
+        );
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 40rem;
+    padding-bottom: 30rem;
+    @include m.desktop {
+        background-position: right bottom;
+        background-size: 40rem;
+        padding-bottom: 0;
+    }
+
+    @include m.desktop {
+        @include m.grid(2, v.$gap);
+    }
+}
