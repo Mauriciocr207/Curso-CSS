@@ -72,13 +72,19 @@ module.exports = {
     // Dado que estamos utilizando un watch para mirar cambios en los archivos,
     // no es necesario utilizar un server, sin embargo, se puede ejecutar un server
     // de la siguiente forma:
-    // devServer: {
-    //     static: {
-    //         directory: path.join(__dirname, 'dist'),
-    //     },
-    //     compress: true,
-    //     port: 3000,
-    //     open: true,
-    // }
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        port: 3000,
+        open: true,
+        historyApiFallback: {
+            rewrites: [
+              { from: /^\/$/, to: '/views/index.html' },
+              { from: /^\/index\.html/, to: '/views/index.html' },
+            ]
+          }
+    }
     // Y ejecutando en la terminal -> npm run start
 }
