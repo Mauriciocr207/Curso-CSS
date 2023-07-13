@@ -1,0 +1,107 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.planes {
+    padding: 10rem 0;
+    padding-bottom: 15rem;
+    background-color: v.$secundario;
+    overflow: hidden;
+    &__heading,
+    &__descripcion {
+        color: v.$blanco;
+    }
+}
+
+.nuestros-planes {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    @include m.tablet {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        margin: 10rem auto 0 auto;
+    }
+
+    .plan {
+        padding: 16rem 4rem 4rem 4rem;
+        color: v.$negro;
+        flex-grow: 1;
+        background-color: v.$blanco;
+        border-bottom: .5rem solid #e1e1e1;
+        transition: transform .3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &:hover {
+            transform: scale(1.05);
+        }
+        @include m.tablet {
+            border-bottom: none;
+        }
+        &--inicio {
+            @include m.iconoBg('../img/icono_inicio.svg');
+        }
+        &--pro {
+            @include m.iconoBg('../img/icono_pro.svg');
+        }
+        &--negocio {
+            @include m.iconoBg('../img/icono_negocio.svg');
+            background-color: v.$primario;
+            order: -1;
+            z-index: 1000;
+            @include m.tablet {
+                order: unset;
+                position: relative;
+                &::before,
+                &::after {
+                    content: '';
+                    background-color: v.$primario;
+                    width: 100%;
+                    height: 5.1rem;
+                    display: inline-block;
+                    position: absolute;
+                }
+                &::before {
+                    border-top-left-radius: 2rem;
+                    border-top-right-radius: 2rem;
+                    top: -5rem;
+                    left: 0;
+                }
+                &::after {
+                    border-bottom-left-radius: 2rem;
+                    border-bottom-right-radius: 2rem;
+                    bottom: -5rem;
+                    left: 0;
+                }
+            }
+        }
+
+        &__precio {
+            font-size: 1.8rem;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        &__listado {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            li {
+                text-align: center;
+            }
+        }
+        &__boton-plan {
+            @include m.boton(v.$primario, v.$secundario);
+            &--wborder {
+                border: .3rem solid v.$blanco;
+                color: v.$blanco;
+            }
+            @include m.tablet {
+                width: 100%;
+            }
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+    }
+}

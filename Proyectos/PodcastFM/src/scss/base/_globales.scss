@@ -1,0 +1,66 @@
+@use 'variables' as v; 
+@use 'mixins' as m; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+}
+p {
+    color: v.$negro;
+    font-size: 2rem;
+    line-height: 2;
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin: 0 0 2rem  0 ;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.5rem;
+    position: relative;
+    z-index: 10;
+    width: fit-content;
+    &::after {
+        content: '';
+        width: calc(100% + 2rem);
+        height: 1rem;
+        background-color: v.$primario;
+        position: absolute;
+        bottom: .5rem;
+        left: 0;
+        z-index: -1;
+    }
+}
+h3 {
+    font-size: 2.8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
