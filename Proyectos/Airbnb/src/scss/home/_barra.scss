@@ -1,0 +1,108 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.barra {
+    @include m.tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+    @include m.desktop {
+        flex-direction: row;
+    }
+    &__navegacion,
+    &__login {
+        display: none;
+    }
+    &__logo {
+        width: fit-content;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding: 1.5rem;
+        position: relative;
+        &::before,
+        &::after {
+            content: '';
+            --size: 3rem;
+            width: var(--size);
+            height: var(--size);
+            position: absolute;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            border-top-left-radius: 1rem;
+            border-top: .5rem solid v.$primario;
+            border-left: .5rem solid v.$primario;
+            animation: appearLogoTopLeft 2s ease;
+        }
+        &::after {
+            bottom: 0;
+            right: 0;
+            border-bottom-right-radius: 1rem;
+            border-bottom: .5rem solid v.$primario;
+            border-right: .5rem solid v.$primario;
+            animation: appearLogoBottomRight 2s ease;
+        }
+        @include m.tablet {
+            margin: 0;
+        }
+    }
+    @include m.tablet {
+        &__navegacion {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        &__login {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__link {
+        display: block;
+        color: v.$blanco;
+    }
+    &__nombre {
+        color: v.$blanco;
+        font-size: 3rem;
+        line-height: 1;
+        margin: 0;
+        animation: opacityAnimation 2s ease;
+    }
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // Animations
+    @keyframes appearLogoTopLeft {
+        0% {
+            transform: translateX(100%) translateY(50%);
+        }
+        100% {
+            transform: translateX(0) translateY(0);
+        }
+    }
+    @keyframes appearLogoBottomRight {
+        0% {
+            transform: translateX(-100%) translateY(-50%);
+        }
+        100% {
+            transform: translateX(0) translateY(0);
+        }
+    }
+    @keyframes opacityAnimation {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

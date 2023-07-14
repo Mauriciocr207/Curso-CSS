@@ -1,0 +1,37 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.lugares {
+
+    &__grid {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 1rem 0;
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+        }
+    }
+}
+
+.lugar {
+    scroll-snap-align: center;
+    min-width: 30rem;
+    @include m.tablet {
+        min-width: unset;
+    }
+    background-color: darken($color: #fff, $amount: 10);
+    border: 1px solid darken($color: #fff, $amount: 10);
+    overflow: hidden;
+    border-radius: 1rem;
+    &__nombre {
+        padding: 2rem;
+        margin: 0;
+        text-align: center;
+        font-weight: 700;
+    }
+}
