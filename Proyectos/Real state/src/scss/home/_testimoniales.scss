@@ -1,0 +1,115 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.testimoniales-blog {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    @include m.desktop {
+        @include m.grid(3, 4rem);
+    }
+    &__heading {
+        span {
+            display: block;
+        }
+    }
+    &__blog {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        @include m.desktop {
+            grid-column: span 2;
+        }
+    }
+    &__testimoniales {
+        @include m.desktop {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+    }
+}
+
+.testimonial {
+    text-align: center;
+    &__imagen {
+        width: 20rem;
+        margin: 0 auto;
+    }
+    &__contenido {
+        background-color: v.$blanco;
+        margin-top: -10rem;
+        padding: 10rem 2rem 2rem 2rem;
+    }
+    &__nombre {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+    &__texto {
+        font-size: 1.8rem;
+        &::before {
+            content: '';
+            background-image: url(../img/quote.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            display: inline-block;
+            width: 4rem;
+            height: 4rem;
+            margin-right: 2rem;
+        }
+    }
+}
+
+.entrada {
+    background-color: v.$blanco;
+    @include m.telefono {
+        display: grid;
+        @include m.grid(5, 0rem);
+        align-items: center;
+    }
+    &__imagen-contenedor {
+        height: 100%;
+        width: 100%;
+        @include m.telefono {
+            grid-column: span 2;
+        }   
+    }
+    &__imagen {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        background-color: red;
+    }
+    &:nth-child(2) &__imagen {
+        @include m.telefono {
+            object-position: center;
+        }
+    }
+    &__contenido {
+        padding: 3rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        * {
+            margin: 0;
+        }
+        @include m.telefono {
+            grid-column: span 3;
+        }
+    }
+    &__meta {
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    &__enlace {
+        @include m.boton(v.$primario, v.$blanco);
+        display: block;
+        width: 100%;
+        @include m.tablet {
+            width: fit-content;
+        }   
+        margin: 0;
+    }
+}
