@@ -1,0 +1,55 @@
+@use 'variables' as v; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+    font-family: v.$fuentePrincipal;
+    font-size: 1.6rem;
+    background-color: darken(v.$grisClaro, 3%);
+}
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+ul {
+    padding:0;
+    list-style: none;
+    margin: 0;
+}
+
+h2[class $="__heading"] {
+    font-weight: 400;
+    width: fit-content;
+    padding-bottom: 2rem;
+    span {
+        font-weight: 700;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        height: 1rem;
+        width: 40%;
+        position: relative;
+        bottom: -1rem;
+        background-image: 
+            linear-gradient(
+                to right,
+                v.$primario 0% ,
+                v.$primario 50% ,
+                lighten(v.$primario, 20) 50% ,
+                lighten(v.$primario, 20) 100% ,
+            );
+    }
+}

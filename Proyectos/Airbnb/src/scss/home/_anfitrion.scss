@@ -6,7 +6,7 @@
     padding: 0;
     overflow: hidden;
     display: grid;
-    grid-template-rows: repeat(2, 30rem);
+    grid-template-rows: repeat(2, 1fr);
     @include m.tablet {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 50rem;
@@ -30,7 +30,7 @@
         color: v.$blanco;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         @include m.tablet {
             justify-content: center;
         }
