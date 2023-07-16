@@ -1,0 +1,80 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.cards {
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        @include m.desktop {
+            @include m.grid(3, 4rem);
+            align-items: stretch;
+        }
+    }
+}
+
+.card {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    @include m.desktop {
+        display: block;
+    }
+    &__img {
+
+        @include m.tablet {
+            width: 100%;
+            height: 100%;
+        }
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .3s ease;
+            
+            &:hover {
+                transform: scale(1.1) rotate(3deg);
+            }
+        }
+    }
+    &__contenido {
+        background-color: v.$blanco;
+        width: 95%;
+        margin: 0 auto;
+        margin-top: -2rem;
+        position: relative;
+        @include m.tablet {
+            width: 100%;
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        @include m.desktop {
+            width: 95%;
+            margin: 0 auto;
+            margin-top: -2rem;
+            position: relative;
+        }
+    }
+    &__heading {
+        margin: 0;
+        padding: 3rem 0;
+        @include m.headingCursiva;
+    }
+    &__enlace {
+        @include m.boton(v.$secundario, v.$blanco);
+        display: block;
+        margin-top: 0;
+        @include m.tablet {
+            width: 80%;
+            margin: 0 auto;
+        }
+        @include m.desktop {
+            width: 100%;
+        }
+    }
+}
