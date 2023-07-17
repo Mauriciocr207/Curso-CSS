@@ -1,0 +1,46 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.slider {
+    margin-top: 5rem;
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.swiper {
+    width: 100%;
+    &-slide {
+        background-position: center;
+        background-size: cover;
+        width: 90%;
+        max-width: 120rem;
+        height: 40rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &-button {
+        &-prev {
+            left: calc(50% - 40%);
+            @include m.desktop {
+                left: calc(50% - 55rem);    
+            }
+            color: v.$secundario;
+        }
+        &-next {
+            right: calc(50% - 40%);
+            @include m.desktop {
+                right: calc(50% - 55rem);    
+            }
+            color: v.$secundario;
+        }
+    }
+}
