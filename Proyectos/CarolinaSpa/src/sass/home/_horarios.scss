@@ -24,9 +24,13 @@
         }
     }
     &__contenido {
-        padding: 3rem;
-        @include m.tablet {
-            max-width: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem 0;
+        max-width: 60rem;
+        @media (min-width: 400px) {
+            padding: 3rem;
         }
         text-align: center;
 
