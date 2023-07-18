@@ -27,10 +27,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 0 auto;
         padding: 3rem 0;
         max-width: 60rem;
         @media (min-width: 400px) {
             padding: 3rem;
+        }
+        @include m.tablet {
+            margin: unset;
         }
         text-align: center;
 
