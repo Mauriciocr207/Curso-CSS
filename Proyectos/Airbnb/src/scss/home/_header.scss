@@ -1,0 +1,31 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.header {
+    background-image: 
+        linear-gradient(rgba(v.$negro, .5) 0%, rgba(v.$negro, 0) 100%),
+        image-set(
+            url(../img/header.avif) 1x,
+            url(../img/header.webp) 1x,
+            url(../img/header.jpg) 1x
+        );
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0 20rem 0;
+    &__busqueda {
+        text-align: center;
+        margin-top: 5rem;
+        @include m.tablet {
+            margin-top: 15rem;
+        }
+        @include m.desktop {
+            margin-top: 30rem;
+        }
+        &-label {
+            color: v.$blanco;
+        }
+        &-boton {
+            @include m.boton(v.$blanco, v.$primario);
+        }
+    }
+}

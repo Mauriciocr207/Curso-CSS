@@ -1,0 +1,36 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.sociales {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    @include m.tablet {
+        width: fit-content;
+    }
+    gap: 2rem;
+    &__enlace {
+        span {
+            display: block;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            padding: 0;
+            margin: -1px;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+        &::before {
+            content: '';
+            padding: 2rem;
+            display: inline-block;
+        }
+        $list: "facebook", "twitter", "instagram", "youtube", "tiktok", "pinterest";
+        @each $social in $list {
+            &[href*='#{$social}']::before {
+                background-image: url('../img/icono_#{$social}.svg');
+            }
+        }
+    }
+}

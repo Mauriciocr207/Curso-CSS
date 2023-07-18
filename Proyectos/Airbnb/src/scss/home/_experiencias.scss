@@ -1,0 +1,77 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.experiencias {
+    margin-top: 5rem;
+    background-color: lighten(v.$grisClaro, 7);
+    &__heading,
+    &__descripcion {
+        text-align: center;
+    }
+    &__listado {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        @include m.tablet {
+            padding: 0;
+            border-radius: 2rem;
+            flex-direction: row;
+            gap: 0;
+        }
+    }
+}
+.experiencia {
+    border-radius: 2rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 60rem;
+    position: relative;
+    transition: all .3s ease;
+    flex-grow: 1;
+    @include m.tablet {
+        border-radius: 0;
+        &__contenido {
+            opacity: 0;
+        }
+        &:hover &__contenido {
+            opacity: 1;
+        }
+        &:hover {
+            flex-grow: 2;
+        }
+    }
+
+    &__imagen {
+        @include m.tablet {
+            position: absolute;
+        }
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__contenido {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        background-color: rgba(0,0,0,.3);
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        backdrop-filter: blur(.7rem);
+        transition: opacity .4s;
+    }
+    &__titulo {
+        color: v.$blanco;
+        font-weight: bold;
+        font-size: 3rem;
+        margin: 0;
+    }
+    &__descripcion {
+        color: v.$blanco;
+        font-size: 2.5rem;
+        margin: 0;
+    }
+}

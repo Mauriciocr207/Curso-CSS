@@ -1,0 +1,52 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.destinos {
+
+    &__grid {
+        @include m.grid(1, 2rem);
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+        @include m.desktop {
+            @include m.grid(4, 2rem);
+        }
+    }
+}
+
+.destino {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background-color: v.$blanco;
+    * {
+        color: v.$primario;
+    }
+    padding: 2rem 0;
+    border-radius: 2rem;
+    transition: background-color .3s ease;
+    &:hover {
+        background-color: v.$primario;
+        * {
+            transition: color .3s ease;
+            color: v.$blanco;
+        }
+    }
+    &__imagen {
+        width: 14rem;
+    }
+    &__informacion {
+        h3, p {
+            margin: 0;
+        }
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+        p {
+            font-size: 2.2rem;
+        }
+    }
+}
