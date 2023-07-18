@@ -1,0 +1,24 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.footer {
+    padding-top: 2rem;
+
+    &__contenedor {
+        display: flex;
+        justify-content: center;
+        @include m.tablet {
+            justify-content: flex-start;
+        }
+    }
+    .nav {
+        width: fit-content;
+    }
+
+    .copyright {
+        text-align: center;
+        margin: 2rem 0 0 0;
+        padding: 2rem 0;
+        background-color: v.$grisClaro;
+    }
+}
