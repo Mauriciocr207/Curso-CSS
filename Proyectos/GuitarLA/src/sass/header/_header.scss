@@ -1,0 +1,119 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header {
+    color: v.$blanco;
+    position: relative;
+    padding: 5rem 0;
+    background-image: 
+        linear-gradient(
+            to right, 
+            rgba(0,0,0,.7),
+            rgba(0,0,0,0.7),
+            
+        ),
+        image-set(
+            url(../img/header.avif) 1x,
+            url(../img/header.webp) 1x,
+            url(../img/header.jpg) 1x,
+        );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    &__barra {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__logo {
+        width: 30rem;
+        position: relative;
+        z-index: 10;
+    }
+    &__guitarra {
+        display: none;
+        filter: brightness(.5);
+        height: 130%;
+        animation: guitarAnimation 1s ease;
+        @include m.tablet {
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        @keyframes guitarAnimation {
+            0% {
+                opacity: 0;
+                transform: translateX(5%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0%);
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    gap: 2rem;
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__enlace {
+        color: v.$blanco;
+        transition: background-color .3s ease;
+        &:hover {
+            background-color: v.$primary;
+        }
+    }
+}
+
+.modelo {
+    color: v.$blanco;
+    margin-top: 5rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    @include m.tablet {
+        text-align: left;
+        width: 50%
+    }
+    &__nombre {
+        font-size: 8rem;
+        margin: 2rem 0;
+    }
+    &__descripcion {
+        margin: 2rem 0 0 0;
+    }
+    &__precio {
+        font-size: 6rem;
+        color: v.$primary;
+        font-weight: 900;
+        margin: 2rem 0 0 0;
+        line-height: 1;
+    }
+    &__enlace {
+        @include m.boton(transparent, v.$blanco);
+        transition: background-color .3s ease;
+        &:hover {
+            background-color: v.$primary;
+
+        }
+        border: .1rem solid v.$primary;
+    }
+}

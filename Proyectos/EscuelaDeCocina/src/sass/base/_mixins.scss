@@ -50,3 +50,20 @@
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
 }
+@mixin heading {
+    text-align: center;
+    &::after {
+        content: '';
+        display: block;
+        height: 10rem;
+        margin: 0 auto;
+        background-image: 
+            image-set(
+                url(../img/separador.avif) 1x,
+                url(../img/separador.webp) 1x,
+                url(../img/separador.png) 1x,
+            );
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

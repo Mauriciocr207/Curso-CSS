@@ -1,0 +1,82 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.productos {
+    &__grid {
+        @include m.tablet {
+            @include m.grid(2, 4rem);
+        }
+        @include m.desktop {
+            @include m.grid(3, 4rem);
+        }
+    }
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+    align-items: center;
+
+    &__imagen {
+        
+    }
+    &__contenido {
+
+    }
+    &__nombre {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+    &__descripcion {
+        font-size: 1.6rem;
+    }
+    &__precio {
+        color: v.$primary;
+        font-weight: 900;
+        font-size: 6rem;
+        margin: 0;
+    }
+    &__enlace {
+        @include m.boton(transparent, darken(v.$primary, 10));
+        transition: all .3s ease;
+        &:hover {
+            background-color: v.$negro;
+            color: v.$blanco;
+            border-color: v.$negro;
+        }
+        border: .4rem solid v.$primary;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        max-width: 40rem;
+    }
+    &__label {
+        font-size: 2.2rem;
+        margin-right: 1rem;
+    }
+    &__cantidad {
+        border: 2px solid v.$primary;
+        padding: 1rem;
+        outline: none;
+        text-align: center;
+    }
+    &__agregar-carrito {
+        margin-top: 6rem;
+        @include m.boton(v.$primary, v.$blanco);
+        display: block;
+        width: fit-content;
+        @include m.tablet {
+            width: fit-content;
+        }
+        flex-basis: content;
+        font-size: 1.8rem;
+        font-weight: 700;
+        &:hover {
+            background-color: v.$negro;
+        }
+    }
+}

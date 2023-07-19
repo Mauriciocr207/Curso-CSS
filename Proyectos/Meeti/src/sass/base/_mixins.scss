@@ -32,6 +32,7 @@
     border: none;
     transition-property: background-color;
     transition-duration: .3s;
+    text-transform: uppercase;
     cursor: pointer;
 
     @include tablet {
