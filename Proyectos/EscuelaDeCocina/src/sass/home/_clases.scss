@@ -1,0 +1,62 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+
+.clases {
+    background-color: v.$gris;
+    padding: 5rem 0;
+    &__heading {
+        @include m.heading;
+    }
+    &__grid {
+        @include m.grid(1, 2rem);
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+        @include m.desktop {
+            @include m.grid(3, 2rem);
+        }
+    }
+}
+.clase-card {
+    border: 1px solid darken(v.$gris, 10);
+    background-color: v.$blanco;
+    &__imagen {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+    }
+    &__meta {
+        background-color: v.$primario;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        color: v.$blanco;
+    }
+    &__precio {
+        background-color: v.$secundario;
+        padding: .5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: v.$negro;
+        border-radius: .5rem;
+    }
+    &__contenido {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__nombre {
+        min-height: 5.5rem;
+    }
+    &__descripcion {
+        color: v.$primario;
+    }
+    &__enlace {
+        @include m.boton(v.$primario, v.$blanco);
+        display: block;
+
+    }
+}

@@ -1,0 +1,19 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.nosotros {
+    &__grid {
+        @include m.grid(1, 4rem);
+        align-items: center;
+        @include m.tablet {
+            @include m.grid(2, 4rem);    
+        }
+    }
+    &__imagen {
+        @include m.tablet {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

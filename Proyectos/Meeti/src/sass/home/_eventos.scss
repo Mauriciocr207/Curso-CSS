@@ -1,0 +1,99 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.eventos {
+    padding: 5rem 0;
+    text-align: center;
+    margin-top: 0;
+    color: v.$gris;
+
+    &__heading {
+        margin-top: 0;
+    }
+    &__grid {
+        margin-top: 2rem;
+        @include m.tablet {
+            @include m.grid(3, 0rem);
+        }
+        @include m.desktop {
+            @include m.grid(3, 2rem);
+        }
+    }
+}
+
+.evento {
+    border-radius: 2rem;
+    pointer-events: inherit;
+    overflow: hidden;
+    border: 1px solid v.$grisClaro;
+    background-color: v.$blanco;
+    width: 70%;
+    @include m.tablet {
+        width: 40rem;
+    }
+    @include m.desktop {
+        width: unset;
+    }
+    &__imagen {
+        width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__contenido {
+        padding: 2rem;
+    }
+    &__fecha {
+        font-size: 1.4rem;
+    }
+    &__nombre {
+        color: v.$gris;
+        margin: 1rem 0 2rem 0;
+        border-bottom: .2rem solid darken(v.$grisClaro, 10);
+    }
+    &__autor {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+
+        &-imagen {
+            width: 7rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        &-informacion {
+            
+        }
+    }
+    &__organizado {
+        &-texto,
+        &-nombre {
+            margin: .5rem 0;
+        }
+        &-texto {
+            font-weight: 700;
+        }
+        &-nombre {
+
+        }
+    }
+}
+
+.swiper {
+    &-pagination {
+        &-bullet {
+            background-color: v.$primario;
+        }
+    }
+    &-button {
+        &-prev, &-next {
+            color: lighten(v.$primario, 5);
+            @include m.desktop {
+                display: none;
+            }
+        }
+    }
+}

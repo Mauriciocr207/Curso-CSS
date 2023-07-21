@@ -1,0 +1,69 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.bloques {
+    margin-top: 5rem;
+    &__grid {
+        @include m.grid(1, 0rem);
+        grid-auto-rows: 40rem;
+        @include m.tablet {
+            @include m.grid(2, 0rem);
+        }
+    }
+}
+
+.bloque {
+    &__contenido {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    // 1 y 4
+    &:nth-child(3n + 1) &__contenido{
+        padding: 2rem;
+        width: 90%;
+        height: 70%;
+        max-width: calc(60rem - 5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: cen;
+        border-top: 1px solid v.$blanco;
+        border-bottom: 1px solid v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            margin: 0 auto;
+        }
+    }
+    &:nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include m.tablet {
+            justify-content: flex-end;
+        }
+        background-color: v.$primario;
+    }
+    &:nth-child(4) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include m.tablet {
+            justify-content: flex-start;
+        }
+        background-color: v.$secundario;
+        grid-row: 3 / 4;
+        @include m.tablet {
+            grid-row: unset;
+        }
+    }
+    &__heading {
+        color: v.$blanco;
+    }
+    &__texto {
+        color: v.$blanco;
+    }
+}
